@@ -1,0 +1,15 @@
+# Samsung SysInput AIDL HAL (vendor.samsung.hardware.sysinput-service)
+type hal_sehsysinput_service, service_manager_type;
+type hal_sehsysinput_default, domain;
+type hal_sehsysinput_default_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(hal_sehsysinput_default)
+binder_use(hal_sehsysinput_default)
+
+allow hal_sehsysinput_default hal_sehsysinput_service:service_manager { add find };
+
+# Touchscreen command nodes (fod_enable, fod_lp_mode, ...)
+allow hal_sehsysinput_default sysfs_sec_touchscreen:dir r_dir_perms;
+allow hal_sehsysinput_default sysfs_sec_touchscreen:file r_file_perms;
+allow hal_sehsysinput_default sysfs_sec_touchscreen:lnk_file r_file_perms;
+allow hal_sehsysinput_default sysfs_touchscreen_writable:file rw_file_perms;

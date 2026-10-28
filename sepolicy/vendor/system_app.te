@@ -1,2 +1,5 @@
 allow system_app sysfs_lcd_writable:dir r_dir_perms;
 allow system_app sysfs_lcd_writable:file rw_file_perms;
+# SamsungBiometrics -> Samsung SysInput HAL (FoD control)
+allow system_app hal_sehsysinput_service:service_manager find;
+allow system_app hal_sehsysinput_default:binder call;

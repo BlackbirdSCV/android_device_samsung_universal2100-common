@@ -120,3 +120,5 @@
 
 /dev/srxxx                                                                                         u:object_r:uwb_device:s0
 /vendor/bin/mafpc_write                                                                                u:object_r:mafpc_write_exec:s0
+
+/vendor/bin/hw/vendor\.samsung\.hardware\.sysinput-service                                     u:object_r:hal_sehsysinput_default_exec:s0
